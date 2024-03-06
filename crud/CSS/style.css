@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+.form form{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 30%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.form form input{
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.form form input[type=text],
+.form form input[type=password],
+.form form input[type=email]{
+    padding: 8px;
+    border:2px solid #aaa;
+    border-radius:4px;
+    outline:none;
+    transition:.3s;
+}
+
+.form form input[type=text]:focus,
+.form form input[type=select]:focus,
+.form form input[type=button]:focus{
+    border-color:rgb(255, 251, 251);
+    box-shadow:0 0 6px 0 rgb(255, 254, 254);
+}
+
+.form form input[type=submit]{
+    border: none;
+    padding: 12px 50px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #00a11d;
+}
+
+
+.form form input[type=submit]:hover {
+    background-color: #60a100;
+    color: white;
+}
+
+.table table{
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 4px;
+}
+
+table th{
+    padding: 16px;
+    text-align: center;
+    font-size: .85em;
+}
+
+.table-agregar{
+    background: #b11e87;
+    padding: 6px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.table--edit{
+    background: #009688;
+    padding: 6px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+.table--edit1{
+    background: #002396;
+    padding: 6px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+.table--delete{
+    background: #b11e1e;
+    padding: 6px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+
