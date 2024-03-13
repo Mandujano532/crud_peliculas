@@ -22,13 +22,12 @@
     <body>
         <div class="form">
             <form action="editar_genero.php" method="POST">
-            <input type="hidden" name="id" value="<?= $row['id']?>">
-            <input type="text" name="nombres" placeholder="Nombre" value="<?= $row['nombres']?>">
-            <input type="text" name="descripcion" placeholder="Descripcion" value="<?= $row['descripcion']?>">
-
-
-               
-                <input type="submit" value="Actualizar">
+            <input type="tex" name="id" value="<?= $row['id']?>" disabled>
+            <input type="text" name="nombres" placeholder="Nombre" value="<?= $row['nombres']?>"disabled>
+            <input type="text" name="descripcion" placeholder="Descripcion" value="<?= $row['descripcion']?>"disabled>
+            <div class="contenedor">
+            <button onclick="window.location.href='index-genero.php'">Volver</button>
+            </div>
             </form>
         </div>
     </body>

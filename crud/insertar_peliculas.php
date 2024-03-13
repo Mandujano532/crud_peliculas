@@ -2,7 +2,7 @@
 include("conexion.php");
 $con = connection();
 
-$id = null;
+$id_p = null;
 $titulo = $_POST['titulo'];
 $productor = $_POST['productor_id'];
 $genero = $_POST['genero_id'];
@@ -48,7 +48,7 @@ $slug1 = generarSlug($slug);
 
 
 
-$sql = "INSERT INTO peliculas VALUES('$id','$titulo','$productor','$genero','$stock', '$slug1')";
+$sql = "INSERT INTO peliculas VALUES('$id_p','$titulo','$productor','$genero','$stock', '$slug1')";
 $query = mysqli_query($con, $sql);
 
 if($query){

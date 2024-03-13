@@ -2,7 +2,7 @@
 include("conexion.php");
 $con = connection();
 
-$sql = "SELECT * FROM generos";
+$sql = "SELECT * FROM generos ";
 $query = mysqli_query($con, $sql);
 ?>
 
@@ -20,11 +20,14 @@ $query = mysqli_query($con, $sql);
 <body>
     <div class="table">
         <h2>Generos Registrados</h2>
-
-        <br>
-        <a href="peliculas.php" class="table--edit">Agregar</a>
-        <br>
-        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th><a href="index.php" >Volver</a></th>
+                    <th><a href="genero.php" >Agregar</a></th>
+                </tr>
+            </thead>
+        <table>
         <table>
             <thead>
                 <tr>
@@ -38,8 +41,8 @@ $query = mysqli_query($con, $sql);
             <tbody>
                 <?php while ($row = mysqli_fetch_array($query)): ?>
                     <tr>
-                        <th><?= $row['id'] ?></th>
-                        <th><?= $row['nombre'] ?></th>
+                        <th><a href="show_genero.php?id=<?= $row['id'] ?>"><?= $row['id'] ?></a></th>
+                        <th><?= $row['nombres'] ?></th>
                         <th><?= $row['descripcion'] ?></th>
                         <th><a href="actualizar_genero.php?id=<?= $row['id'] ?>" class="table--edit">Editar</a></th>
                         <th><a href="eliminar_genero.php?id=<?= $row['id'] ?>" class="table--delete" >Eliminar</a></th>

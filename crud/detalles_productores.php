@@ -21,17 +21,18 @@ $query = mysqli_query($con, $sql);
     <div class="form">
         <h1>Insertar Detalles de Productor</h1>
         <form action="insertar_dproductores.php" method="POST">
-        <select name="productor_id" >
-            <option value="1">Steven Spielberg</option>
-            <option value="2">George Lucas</option>
-            <option value="3">Jerry Bruckheimer</option>
-            <option value="4">Kathleen Kennedy</option>
-            <option value="5">Scott Rudin</option>
-            <option value="6">Harvey Weinstein</option>
-            <option value="7">Kevin Feige</option>
-            <option value="8">Christopher Nolan</option>
-            <option value="9">James Cameron</option>
-            <option value="10">Joel Silver</option>
+        <select name="productor_id">
+            <?php
+            $con = connection();
+            $consulta ="SELECT * FROM productores";
+            $ejecutar =mysqli_query($con,$consulta);
+            ?>
+             <?php foreach($ejecutar as $opciones):?>
+
+                <option value="<?php echo $opciones['id']?>"><?php echo $opciones['nombre']." ".$opciones['apellido']?></option>
+
+
+            <?php endforeach?>
             </select>
             <input type="text" name="biografia" placeholder="Biografia">
           

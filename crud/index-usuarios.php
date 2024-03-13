@@ -20,10 +20,14 @@ $query = mysqli_query($con, $sql);
 <body>
     <div class="table">
         <h2>Usuarios Registradas</h2>
-        <br>
-        <a href="peliculas.php" class="table--edit">Agregar</a>
-        <br>
-        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th><a href="index.php" >Volver</a></th>
+                    <th><a href="usuarios.php" >Agregar</a></th>
+                </tr>
+            </thead>
+        <table>
         <table>
             <thead>
                 <tr>
@@ -39,7 +43,7 @@ $query = mysqli_query($con, $sql);
             <tbody>
                 <?php while ($row = mysqli_fetch_array($query)): ?>
                     <tr>
-                        <th><?= $row['id'] ?></th>
+                        <th><a href="show_usuarios.php?id=<?= $row['id'] ?>"><?= $row['id'] ?></a></th>
                         <th><?= $row['nombre'] ?></th>
                         <th><?= $row['apellido'] ?></th>
                         <th><?= $row['direccion'] ?></th>

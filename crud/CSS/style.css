@@ -3,6 +3,13 @@
     margin: 0;
     padding: 0;
 }
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+  }
 
 html {
     font-family: 'Segoe UI', sans-serif;

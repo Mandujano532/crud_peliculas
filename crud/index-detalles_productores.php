@@ -1,10 +1,10 @@
 <?php
 include("conexion.php");
 $con = connection();
-
-$sql = "SELECT * FROM detalles_productores";
-$query = mysqli_query($con, $sql);
+$sql = "SELECT * FROM detalles_productores d INNER JOIN productores p ON d.productor_id = p.id";
+$query = mysqli_query($con, $sql );
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,15 +19,19 @@ $query = mysqli_query($con, $sql);
 
 <body>
         <h2>Detalles de productores</h2>
-        <br>
-        <a href="peliculas.php" class="table--edit">Agregar</a>
-        <br>
-        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th><a href="index.php" >Volver</a></th>
+                    <th><a href="detalles_productores.php" >Agregar</a></th>
+                </tr>
+            </thead>
+        <table>
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Productor_ID</th>
+                    <th>Nombre Productor</th>
                     <th>Biografia</th>
                     <th></th>
                     <th></th>
@@ -36,12 +40,15 @@ $query = mysqli_query($con, $sql);
             <tbody>
                 <?php while ($row = mysqli_fetch_array($query)): ?>
                     <tr>
-                        <th><?= $row['id'] ?></th>
-                        <th><?= $row['productor_id'] ?></th>
+                        <th><a href="show_dproductores.php?id=<?= $row['id'] ?>"><?= $row['id'] ?></a></th>
+                        <th><?= $row['nombre'] ?></th>
                         <th><?= $row['biografia'] ?></th>
                         <th><a href="actualizar_dproductores.php?id=<?= $row['id'] ?>" class="table--edit">Editar</a></th>
                         <th><a href="eliminar_dproductores.php?id=<?= $row['id'] ?>" class="table--delete" >Eliminar</a></th>
                     </tr>
+                    
+
+                    
                 <?php endwhile; ?>
             </tbody>
         </table>

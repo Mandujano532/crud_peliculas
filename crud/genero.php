@@ -21,7 +21,7 @@ $query = mysqli_query($con, $sql);
     <div class="form">
         <h1>Insertar Genero</h1>
         <form action="insertar_genero.php" method="POST">
-            <input type="text" name="nombre" placeholder="Nombre">
+            <input type="text" name="nombres" placeholder="Nombre">
             <input type="text" name="descripcion" placeholder="Descripcion">
           
             <input type="submit" value="Agregar">

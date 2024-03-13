@@ -44,7 +44,7 @@ $query = mysqli_query($con, $sql);
             <tbody>
                 <?php while ($row = mysqli_fetch_array($query)): ?>
                     <tr>
-                        <th><?= $row['id'] ?></th>
+                        <th><a href="show_productor.php?id=<?= $row['id'] ?>"><?= $row['id'] ?></a></th>
                         <th><?= $row['nombre'] ?></th>
                         <th><?= $row['apellido'] ?></th>
                         <th><a href="actualizar_productor.php?id=<?= $row['id'] ?>" class="table--edit">Editar</a></th>

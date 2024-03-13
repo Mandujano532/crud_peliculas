@@ -3,9 +3,9 @@
 include("conexion.php");
 $con = connection();
 
-$id=$_GET["id"];
+$id_p=$_GET["id"];
 
-$sql="DELETE FROM peliculas WHERE id='$id'";
+$sql="DELETE FROM peliculas WHERE id_p='$id_p'";
 $query = mysqli_query($con, $sql);
 
 if($query){

@@ -3,7 +3,7 @@ include("conexion.php");
 $con = connection();
 
 $id = null;
-$nombre = $_POST['nombre'];
+$nombre = $_POST['nombres'];
 $descripcion = $_POST['descripcion'];
 $confirm ="genero insertado correctamente";
 

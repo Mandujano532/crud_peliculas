@@ -3,9 +3,9 @@
 include("conexion.php");
 $con = connection();
 
-$id=$_GET["id"];
+$id_pr=$_GET["id_pr"];
 
-$sql="DELETE FROM prestamos WHERE id='$id'";
+$sql="DELETE FROM prestamos WHERE id_pr='$id_pr'";
 $query = mysqli_query($con, $sql);
 
 if($query){

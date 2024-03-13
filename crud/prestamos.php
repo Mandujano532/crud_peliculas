@@ -21,35 +21,32 @@ $query = mysqli_query($con, $sql);
     <div class="form">
         <h1>Crear Prestamo</h1>
         <form action="insertar_prestamos.php" method="POST">
-            <select name="pelicula_id" >
-            <option value="1">Steven Spielberg</option>
-            <option value="2">George Lucas</option>
-            <option value="3">Jerry Bruckheimer</option>
-            <option value="4">Kathleen Kennedy</option>
-            <option value="5">Scott Rudin</option>
-            <option value="6">Harvey Weinstein</option>
-            <option value="7">Kevin Feige</option>
-            <option value="8">Christopher Nolan</option>
-            <option value="9">James Cameron</option>
-            <option value="10">Joel Silver</option>
+        <select name="pelicula_id">
+            <?php
+            $con = connection();
+            $consulta ="SELECT * FROM peliculas";
+            $ejecutar =mysqli_query($con,$consulta);
+            ?>
+             <?php foreach($ejecutar as $opciones):?>
+
+                <option value="<?php echo $opciones['id_p']?>"><?php echo $opciones['titulo']?></option>
+
+
+            <?php endforeach?>
             </select>
-        
+
             <select name="usuario_id">
-            <option value="1">Acción</option>
-            <option value="2">Aventura</option>
-            <option value="3">Comedia</option>
-            <option value="4">Drama</option>
-            <option value="5">Ciencia ficción</option>
-            <option value="6">Fantasía</option>
-            <option value="7">Terror</option>
-            <option value="8">Suspenso</option>
-            <option value="9">Romance</option>
-            <option value="10">Animación</option>
-            <option value="11">Documental</option>
-            <option value="12">Cine negro</option>
-            <option value="13">Western</option>
-            <option value="14">Musical</option>
-            <option value="15">Guerra</option>
+            <?php
+            $con = connection();
+            $consulta ="SELECT * FROM usuarios";
+            $ejecutar =mysqli_query($con,$consulta);
+            ?>
+             <?php foreach($ejecutar as $opciones):?>
+
+                <option value="<?php echo $opciones['id']?>"><?php echo $opciones['nombre']." ".$opciones['apellido']?></option>
+
+
+            <?php endforeach?>
             </select>
              
             <input type="date" name="fecha_devolucion">
